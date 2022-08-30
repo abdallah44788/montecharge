@@ -5,7 +5,6 @@ const products = [
 		image: 'img/products/1.png',
 		image2: 'img/products/2.png',
 		image3: 'img/products/3.png',
-		image4: 'img/products/4.png',
 		title: '  القاطع الاصلي من توتال القوي بطول يصل لغاية 600mm و بدقة قطع عالية مزود بمقبض مريح ',
 		price1: 7650,
 		price: 6890,
