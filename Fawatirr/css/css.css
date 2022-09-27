@@ -685,6 +685,67 @@ ul {
 }
 /* End Videos */
 
+/* Start Events */
+.events {
+  padding: 10px;
+  position: relative;
+}
+.events .container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.events .info {
+  flex: 1;
+  direction: ltr;
+}
+.events .info .time {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  gap: 10px;
+  justify-content: center;
+}
+.events .info .time .unit {
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  text-align: center;
+  width: 75px;
+  transition: var(--main-transition);
+}
+.events .info .time .unit span {
+  display: block;
+  transition: var(--main-transition);
+}
+.events .info .time .unit span:first-child {
+  font-size: 35px;
+  padding: 15px;
+  color: var(--main-color);
+  font-weight: bold;
+}
+.events .info .time .unit span:last-child {
+  padding: 8px 10px;
+  font-size: 13px;
+  border-top: 1px solid #d4d4d4;
+}
+.events .info .time .unit:hover,
+.events .info .time .unit:hover span:last-child {
+  border-color: var(--main-color);
+}
+.events .title {
+  text-align: center;
+  margin: 40px 0 0;
+  font-size: 30px;
+}
+.events .description {
+  text-align: center;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #777;
+}
+/* End Events */
+
 /* Start Discount */
 .discount {
   min-height: 100vh;
