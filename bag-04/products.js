@@ -6,6 +6,7 @@ const products = [
 		image2: 'img/products/2.jpg',
 		image3: 'img/products/3.jpg',
 		image4: 'img/products/4.jpg',
+		image5: 'img/products/5.png',
 		title: '    اجعل العودة إلى المدرسة تجربة لا تُنسى مع حقيبتنا المكونة من 3 قطع ',
 		price1: 4750,
 		price: 3400,
