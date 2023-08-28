@@ -116,12 +116,7 @@
          <span class="before currency-value"><span class="value">{{ item.price1 | formatCurrency }}</span>
          <span class="currency">&nbsp;د.ج</span></span></h3></div><!----><div id="express-checkout-section" class="product-section checkout-section"><div class="checkout" style="padding: 20px; box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 20px 0px; border-radius: 7px;"><div class="main">
           
-		  
-       <div class="countdown-container">
-         <h3> الوقت المتبقي قبل انتهاء التخفيض، اغتنم الفرصة وأطلبه الان   </h3>
-         <div class="countdown" id="countdown"></div>
-       </div>
-          
+
           <form id="sign_up_user" action="thenkyou.html"  method="get" name="google-sheet" > <div class="checkout-form"><div class="checkout-groups"><h2 class="checkout-heading">معلومات الزبون</h2> 
 
 
@@ -319,28 +314,6 @@ function topFunction() {
   document.documentElement.scrollTop = 500; // For Chrome, Firefox, IE and Opera
 }
 
-	
-	// Set the date and time for the countdown
-const countdownDate = new Date("2023-08-28T23:59:59").getTime();
-
-// Update the countdown every second
-const countdownInterval = setInterval(function() {
-  const now = new Date().getTime();
-  const distance = countdownDate - now;
-
-  if (distance <= 0) {
-    clearInterval(countdownInterval);
-    document.getElementById("countdown").innerHTML = "Countdown expired!";
-  } else {
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    const countdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    document.getElementById("countdown").innerHTML = countdownText;
-  }
-}, 1000);
 	
 
 </script>      
