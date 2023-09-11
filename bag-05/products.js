@@ -2,7 +2,7 @@ const products = [
 	{
 		id: 2,
 		logo:'img/logo.png',
-		image: 'img/products/1.png',
+		image: 'img/products/1.jpg',
 		image2: 'img/products/2.jpg',
 		image3: 'img/products/3.jpg',
 		image4: 'img/products/4.jpg',
