@@ -6,7 +6,6 @@ const products = [
 		image2: 'img/products/2.png',
 		image3: 'img/products/3.png',
 		image4: 'img/products/4.png',
-		image5: 'img/products/5.png',
 		image6: 'img/products/6.png',
 		title: ' لأنك تستحق الأفضل، أحصل الان على حقائبنا المميزة و المناسبة لك    ',
 		price1: 3200,
