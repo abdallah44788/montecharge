@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>طلب الحذاء</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+
+    .image-section img {
+      width: 100%;
+      display: block;
+      margin: 0;
+      padding: 0;
+      height: auto;
+    }
+
+    @media (min-width: 768px) {
+      .image-section {
+        max-width: 600px;
+        margin: auto;
+      }
+    
+      width: 100%;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-section {
+      padding: 20px;
+      background-color: #fff;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    .form-section h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+    }
+
+    input, select {
+      width: 95%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+    }
+
+    .delivery-options {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      padding: 0 10px;
+    }
+
+    .delivery-options div {
+      flex: 0 0 48%;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .delivery-options div.selected {
+      border-color: #007BFF;
+      background-color: #e7f1ff;
+    }
+
+    .summary {
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      margin-right: 10px;
+    }
+
+    .submit-button {
+      margin: 20px 10px 0 10px;
+      background-color: #007BFF;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      width: 95%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-section">
+    <img src="image/landing-page-puma_01.png" alt="Puma Landing Page">
+    <img src="image/landing-page-puma_02.png" alt="Puma Landing Page">
+    <img src="image/landing-page-puma_03.png" alt="Puma Landing Page">
+    <img src="image/landing-page-puma_04.png" alt="Puma Landing Page">
+  </div>
+
+  <div class="form-section">
+    <h2>استمارة الطلب</h2>
+    <form id="orderForm">
+      <label for="fullname">الاسم الكامل:</label>
+      <input type="text" id="fullname" name="fullname" required />
+
+      <label for="phone">رقم الهاتف:</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="wilaya">اختر ولايتك:</label>
+      <select id="wilaya" name="wilaya" required>
+        <option value="">-</option>
+      </select>
+
+      <label for="address">العنوان الكامل:</label>
+      <input type="text" id="address" name="address" required />
+
+      <label for="quantity">الكمية:</label>
+      <input type="number" id="quantity" name="quantity" min="1" value="1" required />
+
+      <label>اختر نوع التوصيل:</label>
+      <div class="delivery-options">
+        <div id="homeDelivery">لمنزل: <span id="homePrice">-</span> دج</div>
+        <div id="officeDelivery">للمكتب: <span id="officePrice">-</span> دج</div>
+      </div>
+
+      <div class="summary">
+        <p>سعر المنتج: <span id="productPrice">-</span> دج</p>
+        <p>سعر التوصيل: <span id="deliveryPrice">-</span> دج</p>
+        <p><strong>المجموع: <span id="totalPrice">-</span> دج</strong></p>
+      </div>
+
+      <button type="submit" class="submit-button">تأكيد الطلب</button>
+    </form>
+  </div>
+
+  <script>
+    const deliveryPrices = {
+      "أدرار": [1500, 700],
+      "الشلف": [850, 450],
+      "الأغواط": [950, 550],
+      "أم البواقي": [850, 450],
+      "باتنة": [850, 450],
+      "بجاية": [800, 450],
+      "بسكرة": [900, 550],
+      "بشار": [1200, 600],
+      "البليدة": [600, 300],
+      "البويرة": [800, 450],
+      "تمنراست": [1800, 950],
+      "تبسة": [900, 500],
+      "تلمسان": [900, 450],
+      "تيارت": [850, 450],
+      "تيزي وزو": [750, 400],
+      "الجزائر": [400, 200],
+      "الجلفة": [950, 500],
+      "جيجل": [850, 450],
+      "سطيف": [800, 450],
+      "سعيدة": [850, 500],
+      "سكيكدة": [850, 450],
+      "سيدي بلعباس": [850, 500],
+      "عنابة": [850, 400],
+      "قالمة": [900, 500],
+      "قسنطينة": [850, 450],
+      "المدية": [800, 450],
+      "مستغانم": [850, 450],
+      "المسيلة": [900, 500],
+      "معسكر": [850, 500],
+      "ورقلة": [1000, 600],
+      "وهران": [800, 400],
+      "البيض": [1050, 650],
+      "إليزي": [2100, 1200],
+      "برج بوعريريج": [850, 500],
+      "بومرداس": [600, 400],
+      "الطارف": [850, 500],
+      "تندوف": [1700, 700],
+      "تيسمسيلت": [850, 500],
+      "الوادي": [1050, 650],
+      "خنشلة": [850, 500],
+      "سوق أهراس": [900, 500],
+      "تيبازة": [600, 600],
+      "ميلة": [850, 500],
+      "عين الدفلى": [850, 500],
+      "النعامة": [1200, 700],
+      "عين تموشنت": [850, 500],
+      "غرداية": [950, 550],
+      "غليزان": [850, 500],
+      "تميمون": [1600, 800],
+      "أولاد جلال": [950, 550],
+      "بني عباس": [1300, 700],
+      "عين صالح": [1900, 1400],
+      "تقرت": [1000, 650],
+      "المغير": [1200, 1200],
+      "المنيعة": [1100, 700]
+    };
+
+    const wilayaSelect = document.getElementById("wilaya");
+    const homeDiv = document.getElementById("homeDelivery");
+    const officeDiv = document.getElementById("officeDelivery");
+    const homePriceSpan = document.getElementById("homePrice");
+    const officePriceSpan = document.getElementById("officePrice");
+    const productPrice = document.getElementById("productPrice");
+    const deliveryPrice = document.getElementById("deliveryPrice");
+    const totalPrice = document.getElementById("totalPrice");
+    let selectedDelivery = null;
+
+    for (const wilaya in deliveryPrices) {
+      const option = document.createElement("option");
+      option.value = wilaya;
+      option.textContent = wilaya;
+      wilayaSelect.appendChild(option);
+    }
+
+    function updatePrices() {
+      const wilaya = wilayaSelect.value;
+      if (wilaya && deliveryPrices[wilaya]) {
+        const [home, office] = deliveryPrices[wilaya];
+        homePriceSpan.textContent = home;
+        officePriceSpan.textContent = office;
+        if (selectedDelivery) updateSummary();
+      } else {
+        homePriceSpan.textContent = "-";
+        officePriceSpan.textContent = "-";
+        productPrice.textContent = "-";
+        deliveryPrice.textContent = "-";
+        totalPrice.textContent = "-";
+      }
+    }
+
+    function updateSummary() {
+      const qty = parseInt(document.getElementById("quantity").value) || 1;
+      const unitPrice = qty >= 2 ? 2500 : 2800;
+      const deliveryCost = selectedDelivery === "home"
+        ? parseInt(homePriceSpan.textContent)
+        : parseInt(officePriceSpan.textContent);
+      productPrice.textContent = unitPrice * qty;
+      deliveryPrice.textContent = deliveryCost;
+      totalPrice.textContent = (unitPrice * qty + deliveryCost);
+    }
+
+    wilayaSelect.addEventListener("change", () => {
+      updatePrices();
+    });
+
+    homeDiv.addEventListener("click", () => {
+      selectedDelivery = "home";
+      homeDiv.classList.add("selected");
+      officeDiv.classList.remove("selected");
+      updateSummary();
+    });
+
+    officeDiv.addEventListener("click", () => {
+      selectedDelivery = "office";
+      officeDiv.classList.add("selected");
+      homeDiv.classList.remove("selected");
+      updateSummary();
+    });
+
+    document.getElementById("quantity").addEventListener("input", updateSummary);
+  </script>
+
+</body>
+</html>
