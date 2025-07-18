@@ -139,52 +139,121 @@ src="https://www.facebook.com/tr?id=2196139380772240&ev=PageView&noscript=1"
          <h3> الوقت المتبقي قبل انتهاء التخفيض، اغتنم الفرصة وأطلبه الان   </h3>
          <div class="countdown" id="countdown"></div>
        </div>
-          
-          <form id="sign_up_user" action="thenkyou.html"  method="get" name="google-sheet" > <div class="checkout-form"><div class="checkout-groups"><h2 class="checkout-heading">معلومات الزبون</h2> 
+         <form id="sign_up_user" action="thenkyou.html" method="get" name="google-sheet">
+  <div class="checkout-form">
+    <div class="checkout-groups">
+      <h2 class="checkout-heading">معلومات الزبون</h2>
 
+      <div class="form-group">
+        <label for="FullName" class="form-label">الإسم واللقب</label>
+        <input autocomplete="off" type="text" id="1" name="name" placeholder="الإسم واللقب" onkeyup="isEmpty()">
+      </div>
 
+      <div class="form-group is-required">
+        <label for="phone" class="form-label">رقم الهاتف</label>
+        <input autocomplete="off" type="number" id="phone" name="phone" placeholder="رقم الهاتف" required onkeyup="isEmpty()">
+      </div>
 
-  <div class="form-group is-required"><label for="FullName" class="form-label">الإسم واللقب</label> <input autocomplete="off" type="text" id="1" name="name" placeholder="الإسم واللقب" required="" onkeyup="isEmpty()"> <!----></div> <!---->
-<div class="form-group is-required"><label for="FullName" class="form-label"> رقم الهاتف</label> <input autocomplete="off" type="number" id="phone" name="phone" placeholder="رقم الهاتف" required="" onkeyup="isEmpty()"> <!----></div>
-<div class="form-group is-required"><div class="checkout-select" ><label for="FullName" class="form-label">أختر اللون</label> <select  name="coler" id="coler"><option value="coler"></option><option value="الأسود"> الأسود</option><option value="الأزرق">الأزرق</option><option value="الرمادي">الرمادي</option><option value="الاحمر">الأحمر</option></select></div> <!----></div>
+      <div class="form-group">
+        <div class="checkout-select">
+          <label for="coler" class="form-label">أختر اللون</label>
+          <select name="coler" id="coler">
+            <option value="coler"></option>
+            <option value="الأسود">الأسود</option>
+            <option value="الأزرق">الأزرق</option>
+            <option value="الرمادي">الرمادي</option>
+            <option value="الاحمر">الأحمر</option>
+          </select>
+        </div>
+      </div>
 
+      <div class="form-group">
+        <div class="checkout-select">
+          <label for="wilaya" class="form-label">أدخل الولاية👇</label>
+          <select name="wilaya" id="wilaya">
+            <option value="الولاية">الولاية</option>
+            <option value="adrar 1">Adrar 1</option>
+            <option value="Chlef 2">Chlef 2</option>
+            <option value="Laghouat 3">Laghouat 3</option>
+            <option value="Oum El Bouaghi 4">Oum El Bouaghi 4</option>
+            <option value="Batna 5">Batna 5</option>
+            <option value="Béjaïa">Béjaïa 6</option>
+            <option value="Biskra">Biskra 7</option>
+            <option value="Béchar 8">Béchar 8</option>
+            <option value="Blida 9">Blida 9</option>
+            <option value="Bouïra 10">Bouïra 10</option>
+            <option value="Tamanrasset 11">Tamanrasset 11</option>
+            <option value="Tébessa 12">Tébessa 12</option>
+            <option value="Tlemcen 13">Tlemcen 13</option>
+            <option value="Tiaret 14">Tiaret 14</option>
+            <option value="Tizi Ouzou 15">Tizi Ouzou 15</option>
+            <option value="Alger 16">Alger 16</option>
+            <option value="Djelfa 17">Djelfa 17</option>
+            <option value="Jijel 18">Jijel 18</option>
+            <option value="Sétif 19">Sétif 19</option>
+            <option value="Saïda 20">Saïda 20</option>
+            <option value="Skikda 21">Skikda 21</option>
+            <option value="Sidi Bel Abbès 22">Sidi Bel Abbès 22</option>
+            <option value="Annaba 23">Annaba 23</option>
+            <option value="Guelma 24">Guelma 24</option>
+            <option value="Constantine 25">Constantine 25</option>
+            <option value="Médéa 26">Médéa 26</option>
+            <option value="Mostaganem 27">Mostaganem 27</option>
+            <option value="M'Sila 28">M'Sila 28</option>
+            <option value="Mascara 29">Mascara 29</option>
+            <option value="Ouargla 30">Ouargla 30</option>
+            <option value="Oran 31">Oran 31</option>
+            <option value="El bayadh 32">El bayadh 32</option>
+            <option value="Illizi 33">Illizi 33</option>
+            <option value="Bordj Bou Arreridj 34">Bordj Bou Arreridj 34</option>
+            <option value="Boumerdès 35">Boumerdès 35</option>
+            <option value="El Tarf 36">El Tarf 36</option>
+            <option value="Tindouf 37">Tindouf 37</option>
+            <option value="Tissemsilt 38">Tissemsilt 38</option>
+            <option value="El Oued 39">El Oued 39</option>
+            <option value="Khenchela 40">Khenchela 40</option>
+            <option value="Souk ahras 41">Souk ahras 41</option>
+            <option value="Tipaza 42">Tipaza 42</option>
+            <option value="Mila 43">Mila 43</option>
+            <option value="Aïn Defla 44">Aïn Defla 44</option>
+            <option value="Naâma 45">Naâma 45</option>
+            <option value="Aïn Témouchent 46">Aïn Témouchent 46</option>
+            <option value="Ghardaïa 47">Ghardaïa 47</option>
+            <option value="Relizane 48">Relizane 48</option>
+            <option value="Timimoun 49">Timimoun 49</option>
+            <option value="Bordj Badji Mokhtar 50">Bordj Badji Mokhtar 50</option>
+            <option value="Ouled Djellal 51">Ouled Djellal 51</option>
+            <option value="Beni Abbes 52">Beni Abbes 52</option>
+            <option value="In Salah 53">In Salah 53</option>
+            <option value="In Guezzam 54">In Guezzam 54</option>
+            <option value="Touggourt 55">Touggourt 55</option>
+            <option value="Djanet 56">Djanet 56</option>
+            <option value="El M'Ghair 57">El M'Ghair 57</option>
+            <option value="El Meniaa 58">El Meniaa 58</option>
+          </select>
+        </div>
+      </div>
 
+      <div class="form-group">
+        <label for="adress" class="form-label">أدخل عنوانك👇</label>
+        <input type="text" id="adress" name="adress" placeholder="العنوان">
+      </div>
 
+    </div>
 
-<!----><div class="form-group is-required"><div class="checkout-select" ><label for="FullName" class="form-label">أدخل الولاية👇</label> <select  name="wilaya" 
-										id="wilaya"  ><option value="الولاية">الولاية</option><option value="adrar 1">Adrar 1</option><option value="Chlef 2">Chlef 2</option><option value="Laghouat 3">Laghouat 3</option><option value="Oum El Bouaghi 4">Oum El Bouaghi 4</option><option value="Batna 5">Batna 5</option><option value="Béjaïa">Béjaïa 6</option><option value="Biskra">Biskra 7</option><option value="Béchar 8">Béchar 8</option><option value="Blida 9">Blida 9</option><option value="Bouïra 10">Bouïra 10</option><option value="Tamanrasset 11">Tamanrasset 11</option><option value="Tébessa 12">Tébessa 12</option><option value="Tlemcen 13">Tlemcen 13</option><option value="Tiaret 14">Tiaret 14</option><option value="Tizi Ouzou 15">Tizi Ouzou 15</option><option value="Alger 16">Alger 16</option><option value="Djelfa 17">Djelfa 17</option><option value="Jijel 18">Jijel 18</option><option value="Sétif 19">Sétif 19</option><option value="Saïda 20">Saïda 20</option><option value="Skikda 21">Skikda 21</option><option value="Sidi Bel Abbès 22">Sidi Bel Abbès 22</option><option value="Annaba 23">Annaba 23</option><option value="Guelma 24">Guelma 24</option><option value="Constantine 25">Constantine 25</option><option value="Médéa 26">Médéa 26</option><option value="Mostaganem 27">Mostaganem 27</option><option value="M&#39;Sila 28">M'Sila 28</option><option value="Mascara 29">Mascara 29</option><option value="Ouargla 30">Ouargla 30</option><option value="Oran 31">Oran 31</option><option value="El bayadh 32">El bayadh 32</option><option value="Illizi 33">Illizi 33</option><option value="Bordj Bou Arreridj 34">Bordj Bou Arreridj 34</option><option value="Boumerdès 35">Boumerdès 35</option><option value="El Tarf 36">El Tarf 36</option><option value="Tindouf 37">Tindouf 37</option><option value="Tissemsilt 38">Tissemsilt 38</option><option value="El Oued 39">El Oued 39</option><option value="Khenchela 40">Khenchela 40</option><option value="Souk ahras 41">Souk ahras 41</option><option value="Tipaza 42">Tipaza 42</option><option value="Mila 43">Mila 43</option><option value="Aïn Defla 44">Aïn Defla 44</option><option value="Naâma 45">Naâma 45</option><option value="Aïn Témouchent 46">Aïn Témouchent 46</option><option value="Ghardaïa 47">Ghardaïa 47</option>
-  <option value="Relizane 48">Relizane 48</option>
-  <option value="Timimoun 49">Timimoun 49</option>
-  <option value="Bordj Badji Mokhtar 50">Bordj Badji Mokhtar 50</option>
-  <option value="Ouled Djellal 51">Ouled Djellal 51</option>
-  <option value="Beni Abbes 52">Beni Abbes 52</option>
-  <option value="In Salah 53">In Salah 53</option>
-  <option value="In Guezzam 54">In Guezzam 54</option>
-  <option value="Touggourt 55">Touggourt 55</option>
-  <option value="Djanet 56">Djanet 56</option>
-  <option value="El M'Ghair 57">El M'Ghair 57</option>
-  <option value="El Meniaa 58">El Meniaa 58</option>
-  
-  </select></div> <!----></div>
-   <!---->
-   
-   <div class="form-group is-required"><div class=""><label for="FullName" class="form-label"> أدخل عنوانك👇</label> <input type="text" id="adress" name="adress" placeholder="العنوان" required>
-  
-   
-   
-   <!----></div>
-     <!----></div> <!----></div> <!----> <!---->
-     <div class="product-section add-to-cart-section"> 
-      <input id="submit" type="submit" value="للطلب إضغط هنا"   onclick="var e=this;setTimeout(function(){e.disabled=true;},0);return true;"  class="button single-submit" >
-   
-  
-     
-      <div class="sticky-cart-bar show-on-mobile"><div class="container"><div class="product-section add-to-cart-section">
-      <button onclick="topFunction()"  type="button" data-pb-field="button-text" 
-      data-pb-type="text" data-pb-value="للطلب إظغط هنا" class="button single-submit">للطلب إضغط هنا</button></div> <!----></div></div>
-      </form>
-      </div></div></div></div>
+    <div class="product-section add-to-cart-section">
+      <input id="submit" type="submit" value="للطلب إضغط هنا" onclick="var e=this;setTimeout(function(){e.disabled=true;},0);return true;" class="button single-submit">
 
+      <div class="sticky-cart-bar show-on-mobile">
+        <div class="container">
+          <div class="product-section add-to-cart-section">
+            <button onclick="topFunction()" type="button" data-pb-field="button-text" data-pb-type="text" data-pb-value="للطلب إظغط هنا" class="button single-submit">للطلب إضغط هنا</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
   
   
 
