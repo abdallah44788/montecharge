@@ -140,7 +140,7 @@ src="https://www.facebook.com/tr?id=2196139380772240&ev=PageView&noscript=1"
          <div class="countdown" id="countdown"></div>
        </div>
           
-          <form id="sign_up_user" action="thenkyou.html"  method="get" name="google-sheet" > <div class="checkout-form"><div class="checkout-groups"><h2 class="checkout-heading">معلومات الزبون</h2> 
+          <form id="sign_up_user" action="thenkyou.html"  method="post" name="google-sheet" > <div class="checkout-form"><div class="checkout-groups"><h2 class="checkout-heading">معلومات الزبون</h2> 
 
 
 
@@ -175,7 +175,7 @@ src="https://www.facebook.com/tr?id=2196139380772240&ev=PageView&noscript=1"
    <!----></div>
      <!----></div> <!----></div> <!----> <!---->
      <div class="product-section add-to-cart-section"> 
-      <input id="submit" type="submit" value="للطلب إضغط هنا"   onclick="var e=this;setTimeout(function(){e.disabled=true;},0);return true;"  class="button single-submit" >
+      <input id="submit" type="submit" value="للطلب إضغط هنا" class="button single-submit" >
    
   
      
@@ -305,16 +305,27 @@ function topFunction() {
 
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbyIhnQifpmrLVjSXKKoX-4RF4CYhpcvR2S0DZsgb1ryAEB4C7bESAkcyTBJEYnytQ2K/exec'
-  const form = document.forms['google-sheet']
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwN2Du2P9jO4NK1_FGBgFzlxAZNtGPy5tNxMeryYrAOUU21jg8fWRUUecmQg0ydIcxT/exec';
+  const form = document.forms['google-sheet'];
 
   form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => window.location.replace("thenkyou.html"))
-      .catch(error => console.error('Error!', error.message))
-  })
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        if (response.ok) {
+          window.location.replace("thenkyou.html");
+        } else {
+          throw new Error("فشل إرسال النموذج");
+        }
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        alert('حدث خطأ أثناء إرسال الطلب: ' + error.message);
+      });
+  });
 </script>
+
+
   
 <script>
   //Get the button:
